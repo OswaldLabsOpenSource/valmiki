@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Oswald</title>
+		<style type="text/css">
+			body {
+				padding: 1px 10px 10px 10px;
+				width: 200px;
+				text-align: center;
+			}
+			h2 {
+				font-size: 120%;
+			}
+			button {
+				width: 100%;
+				margin-top: 10px;
+				padding: 15px;
+				font-weight: bold;
+				outline: none;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				background: #ddd;
+			}
+			button.primary {
+				background: #2792f3;
+				color: white;
+			}
+			button.primary:hover {
+				background: #2ca6f1;
+			}
+			.enabled {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="enabled">
+			<h2>Oswald is enabled.</h2>
+			<p>On disabling Oswald, your experience on the web will be back to the dull old kind.</p>
+		</div>
+		<div class="disabled">
+			<h2>Oswald is disabled.</h2>
+			<p>On enabling Oswald, your experience on the web will be changed to best suit your needs.</p>
+		</div>
+		<button class="primary" id="enableOswald">Enable Oswald</button>
+		<button>Preferences</button>
+		<script type="text/javascript" src="oswald.js"></script>
+	</body>
+</html>
