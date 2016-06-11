@@ -1,0 +1,21 @@
+body {
+	background: #fffacc !important;
+	color: #000 !important;
+	line-height: 1.8 !important;
+	font-family: 'Comic Sans', sans-serif, monospace !important;
+	font-size: 1.2rem !important;
+}
+
+main {
+	width: 900px;
+	margin: 5% auto;
+}
+
+main {
+	letter-spacing: 1px;
+	word-spacing: 5px;
+}
+
+i, em {
+	font-style: bold;
+}
