@@ -1,7 +1,7 @@
 chrome.storage.sync.get({
 	serviceStatus: ""
 }, function(items) {
-	if (items.serviceStatus== "start") {
+	if (items.serviceStatus == "start") {
 		if (document.querySelectorAll("#oswaldSheet").length <= 0) {
 			var externalSheet = document.createElement("link");
 			externalSheet.setAttribute("href", "//getoswald.xyz/style1.css");
