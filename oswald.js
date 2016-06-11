@@ -46,7 +46,7 @@ _($("#readingMode"), "click", function() {
 	}, function (tabs) {
 		if (tabs[0].url.indexOf("http://oswald.ga") == -1) {
 			chrome.tabs.create({
-				url: "http://oswald.ga/" + tabs[0].url
+				url: "http://oswald.ga/url.php?url=" + tabs[0].url
 			});
 		}
 	});
