@@ -17,6 +17,7 @@ Oswald.startService = function() {
 	$(".disabled").style.display = "none";
 	$(".enabled").style.display = "block";
 	$("body").classList.add("on");
+	chrome.browserAction.setIcon({path:" icon.png"});
 	chrome.storage.sync.set({
 		serviceStatus: "start"
 	});
@@ -26,6 +27,7 @@ Oswald.stopService = function() {
 	$(".disabled").style.display = "block";
 	$(".enabled").style.display = "none";
 	$("body").classList.remove("on");
+	chrome.browserAction.setIcon({path:" icon-disabled.png"});
 	chrome.storage.sync.set({
 		serviceStatus: "stop"
 	});
