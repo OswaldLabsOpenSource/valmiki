@@ -32,18 +32,27 @@
 			.enabled {
 				display: none;
 			}
+			body.on {
+				background: #2792f3;
+				color: white;
+			}
+			body.on button.primary {
+				background: white;
+				color: #2792f3;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="enabled">
 			<h2>Oswald is enabled.</h2>
 			<p>On disabling Oswald, your experience on the web will be back to the dull old kind.</p>
+			<button class="primary" id="disableOswald">Disable Oswald</button>
 		</div>
 		<div class="disabled">
 			<h2>Oswald is disabled.</h2>
 			<p>On enabling Oswald, your experience on the web will be changed to best suit your needs.</p>
+			<button class="primary" id="enableOswald">Enable Oswald</button>
 		</div>
-		<button class="primary" id="enableOswald">Enable Oswald</button>
 		<button>Preferences</button>
 		<script type="text/javascript" src="oswald.js"></script>
 	</body>
