@@ -44,9 +44,9 @@ _($("#readingMode"), "click", function() {
 		"active": true,
 		"windowId": chrome.windows.WINDOW_ID_CURRENT
 	}, function (tabs) {
-		if (tabs[0].url.indexOf("http://oswald.ga/api.php") == -1) {
+		if (tabs[0].url.indexOf("http://oswald.ga") == -1) {
 			chrome.tabs.create({
-				url: "http://oswald.ga/api.php?url=" + tabs[0].url
+				url: "http://oswald.ga/" + tabs[0].url
 			});
 		}
 	});
