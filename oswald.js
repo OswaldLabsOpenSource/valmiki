@@ -39,7 +39,18 @@ _($("#enableOswald"), "click", function() {
 _($("#disableOswald"), "click", function() {
 	Oswald.stopService();
 });
-
+_($("#readingMode"), "click", function() {
+	chrome.tabs.query({
+		"active": true,
+		"windowId": chrome.windows.WINDOW_ID_CURRENT
+	}, function (tabs) {
+		if (tabs[0].url.indexOf("http://oswald.ga/api.php") == -1) {
+			chrome.tabs.create({
+				url: "http://oswald.ga/api.php?url=" + tabs[0].url
+			});
+		}
+	});
+});
 _(document, "DOMContentLoaded", function() {
 	Oswald();
 });

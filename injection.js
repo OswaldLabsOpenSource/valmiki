@@ -11,10 +11,13 @@ chrome.storage.sync.get({
 			externalSheet.setAttribute("id", "oswaldSheet");
 			document.querySelector("head").appendChild(externalSheet);
 
-			var readingMode = document.createElement("button");
-			readingMode.innerHTML = "Reading Mode";
-			readingMode.classList.add("readingMode");
-			document.querySelector("body").appendChild(readingMode);
+			// var readingMode = document.createElement("button");
+			// readingMode.innerHTML = "Reading Mode";
+			// readingMode.classList.add("readingMode");
+			// readingMode.addEventListener("click", function() {
+			// 	window.location.href = "http://oswald.ga/api.php?url=" + encodeURIComponent(window.location.href);
+			// });
+			// document.querySelector("body").appendChild(readingMode);
 
 		}
 	}

@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Oswald</title>
+		<link rel="stylesheet" type="text/css" href="ionicons.min.css">
 		<style type="text/css">
 			body {
 				padding: 1px 10px 10px 10px;
@@ -17,7 +18,6 @@
 				width: 100%;
 				box-sizing: border-box;
 				margin-top: 10px;
-				padding: 15px;
 				font-weight: bold;
 				outline: none;
 				border: none;
@@ -25,6 +25,10 @@
 				cursor: pointer;
 				background: #ddd;
 				display: block;
+				height: 40px;
+				line-height: 40px;
+				font-size: 110%;
+				padding: 0 0 0 10px;
 			}
 			.primary {
 				background: #2792f3;
@@ -40,9 +44,20 @@
 				background: #2792f3;
 				color: white;
 			}
+			body.on button, body.on .button {
+				color: black;
+			}
 			body.on .primary {
 				background: white;
 				color: #2792f3;
+			}
+			i {
+				display: inline-block;
+				font-size: 200%;
+				vertical-align: middle;
+				width: 30px;
+				float: left;
+				text-align: center;
 			}
 		</style>
 	</head>
@@ -50,14 +65,15 @@
 		<div class="enabled">
 			<h2>Oswald is enabled.</h2>
 			<p>On disabling Oswald, your experience on the web will be back to the dull old kind.</p>
-			<button class="primary" id="disableOswald">Disable Oswald</button>
+			<button class="primary" id="disableOswald"><i class="ion-android-radio-button-on"></i>Disable Oswald</button>
 		</div>
 		<div class="disabled">
 			<h2>Oswald is disabled.</h2>
 			<p>On enabling Oswald, your experience on the web will be changed to best suit your needs.</p>
-			<button class="primary" id="enableOswald">Enable Oswald</button>
+			<button class="primary" id="enableOswald"><i class="ion-android-radio-button-on"></i>Enable Oswald</button>
 		</div>
-		<a class="button" target="_blank" href="chrome-extension://gbpdffhlimhbcfcfmlepalagkimbclnp/customize.html">Preferences</a>
+		<a class="button" id="readingMode"><i class="ion-ios-book"></i>Reading Mode</a>
+		<a class="button" target="_blank" href="chrome-extension://gbpdffhlimhbcfcfmlepalagkimbclnp/customize.html"><i class="ion-toggle-filled"></i>Preferences</a>
 		<script type="text/javascript" src="oswald.js"></script>
 	</body>
 </html>

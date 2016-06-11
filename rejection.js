@@ -4,6 +4,6 @@ if (document.querySelectorAll("#oswaldSheet").length > 0) {
 	externalSheet.setAttribute("rel", "");
 	externalSheet.setAttribute("type", "");
 	externalSheet.setAttribute("id", "");
-	document.querySelector(".readingMode").style.display = "none";
-	document.querySelector(".readingMode").classList.remove("readingMode");
+	// document.querySelector(".readingMode").style.display = "none";
+	// document.querySelector(".readingMode").classList.remove("readingMode");
 }
