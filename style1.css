@@ -53,11 +53,11 @@ a {
 	right: 20px;
 	top: 20px;
 	background: black;
-    outline: none;
-    border: none;
-    color: white;
-    font-size: 99%;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+	outline: none;
+	border: none;
+	color: white;
+	font-size: 99%;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
 }
