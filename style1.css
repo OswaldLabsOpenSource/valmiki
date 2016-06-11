@@ -61,3 +61,7 @@ a {
 	border-radius: 5px;
 	cursor: pointer;
 }
+
+i, em {
+	font-style: normal !important;
+}
