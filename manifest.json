@@ -13,7 +13,7 @@
 	},
 
 	"background": {
-		"scripts": ["injection.js"]
+		"scripts": ["background.js"]
 	},
 
 	"options_page": "customize.html",
