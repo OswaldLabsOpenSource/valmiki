@@ -3,17 +3,25 @@
 	color: #000 !important;
 	line-height: 1.8 !important;
 	font-family: 'Comic Sans', sans-serif, monospace !important;
-	font-size: 1.2rem !important;
+	font-size: 20px !important;
 }
 
-main {
-	width: 900px;
-	margin: 5% auto;
+img {
+	-webkit-filter: contrast(140%);
 }
 
-main {
+a {
+	color: rgb(0,0,130) !important;
+	font-weight: 800;
+}
+
+*::selection {
+	background: rgba(102,153,238,0.5) !important;
+}
+
+* {
 	letter-spacing: 1px;
-	word-spacing: 5px;
+	word-spacing: 3px;
 }
 
 i, em {
