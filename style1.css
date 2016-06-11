@@ -1,29 +1,48 @@
-* {
-	background: #fffacc !important;
+address, article, aside, blockquote, canvas, dd, div, dl, fieldset, figcaption, figure, figcaption, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, li, main, nav, noscript, ol, output, p, pre, section, table, tfoot, ul, video, body {
+
+	/*
+		"Optimal Colors to Improve Readability for People with Dyslexia"
+		Luz Rello, & Ricardo Baeza-Yates, Pompeu Fabra University
+		https://www.w3.org/WAI/RD/2012/text-customization/r11
+	*/
+	background: #ff0 !important;
 	color: #000 !important;
-	line-height: 1.8 !important;
-	font-family: 'Comic Sans', sans-serif, monospace !important;
+
+	/*
+		"Dyslexia Style Guide"
+		British Dyslexia Association
+		http://www.bdadyslexia.org.uk/common/ckeditor/filemanager/userfiles/About_Us/policies/Dyslexia_Style_Guide.pdf
+	*/
 	font-size: 18px !important;
+	line-height: 30px !important;
+	letter-spacing: 1px !important;
+	font-family: "Arial", sans-serif !important;
+
 }
 
-img {
-	-webkit-filter: contrast(140%);
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold !important;
+}
+h1 {
+	font-size: 140% !important;
+}
+h2 {
+	font-size: 125% !important;
+}
+h3 {
+	font-size: 120% !important;
+}
+h4 {
+	font-size: 115% !important;
+}
+h4 {
+	font-size: 110% !important;
+}
+h6 {
+	font-size: 105% !important;
 }
 
 a {
-	color: rgb(0,0,130) !important;
-	font-weight: 800;
-}
-
-*::selection {
-	background: rgba(102,153,238,0.5) !important;
-}
-
-* {
-	letter-spacing: 1px;
-	word-spacing: 3px;
-}
-
-i, em {
-	font-style: bold;
+	font-weight: bold;
+	color: #000 !important;
 }
