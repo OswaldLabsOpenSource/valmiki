@@ -28,11 +28,12 @@ window.addEventListener("scroll", function() {
 	document.getElementById("thisRow").style.webkitTransform = "translateY(" + window.pageYOffset + "px)";
 });
 
-var info_color;
-var info_background;
-var info_fontSize;
-var info_letterSpacing;
-var info_wordSpacing;
+var info_color = $(".preview").style.color;
+var info_background = $(".preview").style.background;
+var info_fontSize = $(".preview").style.fontSize;
+var info_letterSpacing = $(".preview").style.letterSpacing;
+var info_wordSpacing = $(".preview").style.wordSpacing;
+
 
 var allInputs = document.querySelectorAll("input");
 for (i = 0; i < allInputs.length; i++) {
@@ -91,11 +92,21 @@ _($("#submitForm"), "click", function() {
 
 _(document, "DOMContentLoaded", function() {
 	chrome.storage.sync.get(function(items) {
-		document.querySelector(".preview").style.fontSize = items.myFontSize;
-		document.querySelector(".preview").style.letterSpacing = items.myLetterSpacing;
-		document.querySelector(".preview").style.wordSpacing = items.myWordSpacing;
-		document.querySelector(".preview").style.background = items.myBackgroundColor;
-		document.querySelector(".preview").style.color = items.myColor;
+		if (!items.myFontSize) {
+			chrome.storage.sync.set({
+				myFontSize: "18px",
+				myLetterSpacing: "2px",
+				myWordSpacing: "4px",
+				myBackgroundColor: "#ff0",
+				myColor: "#000"
+			});
+		} else {
+			document.querySelector(".preview").style.fontSize = items.myFontSize;
+			document.querySelector(".preview").style.letterSpacing = items.myLetterSpacing;
+			document.querySelector(".preview").style.wordSpacing = items.myWordSpacing;
+			document.querySelector(".preview").style.background = items.myBackgroundColor;
+			document.querySelector(".preview").style.color = items.myColor;
+		}
 	});
 });
 	
