@@ -1,16 +1,110 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Oswald &middot; Settings</title>
-</head>
-<body>
-	<div class="container">
-		<h1 class="title">Customize Oswald</h1>
-			<input type="text" placeholder="Naam" id="name">
-			<input type="text" placeholder="Pata" id="address">
-			<div id="status"></div>
-			<button id="save">Save</button>	
-	</div>
-	<script type="text/javascript" src="customize.js"></script>
-</body>
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>				<html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>				<html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]>				<html class="lt-ie10" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Oswald &middot; Preferences</title>
+		<link rel="icon" type="text/png" href="icon.png">
+		<link href="foundation.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="ionicons.min.css">
+		<style>
+			::selection { background: whitesmoke }
+			i { font-size: 120%; vertical-align: middle; margin-right: 10px }
+			body { line-height: 1.5; }
+			.iage { width: 100%; border-radius: 5px; margin: 5px 0px 15px 0; }
+			.twentytwenty-overlay { display: none; }
+			footer { background: #eee; text-align: center; padding: 50px; }
+			footer a { text-decoration: none; color: #000 }
+			h3 { font-weight: normal; letter-spacing: normal; margin: 0; }
+			p { margin: 5px 0 10px 0; color: #aaa; }
+			input[type="radio"] { -webkit-appearance: none; margin: 0; }
+			label { padding: 0; }
+			input[type="radio"] { outline: none; font: inherit; font-size: 100% }
+			.style-1 input[type="radio"] { width: calc(100%/3) }
+			.style-2 input[type="radio"] { width: calc(100%/4); }
+			.style-2 input[type="radio"]:before { height: 70px; padding: 5px; margin-bottom: -7px; display: flex; justify-content: center; align-items: center; }
+			.style-2 input[type="radio"]:nth-of-type(1):before, .style-2 input[type="radio"]:nth-of-type(2):before, .style-2 input[type="radio"]:nth-of-type(3):before, .style-2 input[type="radio"]:nth-of-type(4):before { border-bottom: 0 }
+			.style-2 input[type="radio"]:nth-of-type(2n):before, .style-2 input[type="radio"]:nth-of-type(3):before, .style-2 input[type="radio"]:nth-of-type(7):before { border-left: 0 }
+			.style-2 input[type="radio"]:nth-of-type(1):before { border-top-left-radius: 7.5px; }
+			.style-2 input[type="radio"]:nth-of-type(4):before { border-top-right-radius: 7.5px; }
+			.style-2 input[type="radio"]:nth-of-type(5):before { border-bottom-left-radius: 7.5px; }
+			.style-2 input[type="radio"]:nth-of-type(8):before { border-bottom-right-radius: 7.5px; }
+			#BlackonWhite:before { background: #fff; color: #000 }
+			#BlackonYellow:before { background: #ff0; color: #000 }
+			#BlackonCreme:before { background: #fafac8; color: #000 }
+			#OffblackonOffwhite:before { background: #0a0a0a; color: #ffffe5 }
+			#Blueonwhite:before { background: white; color: blue }
+			#DarkbrownonLightgreen:before { background: #b9b9b0; color: #1e1e00 }
+			#BrownonDarkgreen:before { background: #a0a000; color: #282800 }
+			#BlueonYellow:before { background: yellow; color: blue }
+			.style-2 input[type="radio"]:checked:before { box-shadow: 0px 0px 0px 5px #2997f2; position: relative; z-index: 1 }
+			input[type="radio"]:before { cursor: pointer; content: attr(data-name); width: 100%; float: left; text-align: center; border: 2px solid #ddd; padding: 7.5px 0 }
+			.style-1 input[type="radio"]:first-of-type:before { border-radius: 7.5px 0 0 7.5px; border-right: 0 }
+			.style-1 input[type="radio"]:last-of-type:before { border-radius: 0 7.5px 7.5px 0; border-left: 0 }
+			input[type="radio"]:checked:before { background: #2997f2; color: white }
+			article:not(:last-child) { margin-bottom: 30px }
+			input[type="range"] { width: 300px; }
+			input[type="submit"] { background: #2997f2; border: 1px solid #2997f2; color: #fff; cursor: pointer; padding: 15px 45px; font-size: 120%; border-radius: 7.5px; width: 100%; outline: none; }
+			input[type="submit"]#reset { background: transparent; border: 2px solid #aaa; color: #aaa; }
+			.preview { border: 2px solid #ddd; padding: 5%; border-radius: 7.5px; transition: 0.3s ease; background: yellow; color: black; font-size: 18px; letter-spacing: 2px; word-spacing: 4px; }
+		</style>
+	</head>
+	<body>
+		<div class="row" style="margin-top: 75px">
+			<div class="large-12 columns">
+				<h1 style="margin: 0 0 50px 0; text-align: center; font-weight: normal;">Preferences</h1>
+			</div>
+			<div class="large-6 columns" style="margin-bottom: 75px">
+				<article>
+					<h3>Do you suffer from a learning disorder?</h3>
+					<p>This adjusts the overall color-contrast ratio.</p>
+					<div class="style-1">
+						<input id="learningDisability" data-name="Learning Disability" type="radio" name="disorder" checked><input id="eyeDefect" data-name="Eye Defect" type="radio" name="disorder"><input id="none" data-name="None of these" type="radio" name="disorder">
+					</div>
+				</article>
+				<article>
+					<h3>Select a color set you&rsquo;re comfortable with.</h3>
+					<p>This adjusts the overall color-contrast ratio.</p>
+					<div class="style-2">
+						<input id="BlackonWhite" data-name="Black on White" type="radio" name="colorset"><input id="BlackonYellow" data-name="Black on Yellow" type="radio" name="colorset" checked><input id="BlackonCreme" data-name="Black on Creme" type="radio" name="colorset"><input id="OffblackonOffwhite" data-name="Off-black on Off-white" type="radio" name="colorset"><input id="Blueonwhite" data-name="Blue on White" type="radio" name="colorset"><input id="DarkbrownonLightgreen" data-name="Dark brown on Light green" type="radio" name="colorset"><input id="BrownonDarkgreen" data-name="Brown on Dark green" type="radio" name="colorset"><input id="BlueonYellow" data-name="Blue on Yellow" type="radio" name="colorset"></div>
+				</article>
+				<article>
+					<h3>Slide to adjust the <b>font size</b></h3>
+					<p>This adjusts the font-size across the web</p>
+					<div class="style-3">
+						<input id="fontSizeRange" type="range" min="8" max="24" step="0.01">
+					</div>
+				</article>
+				<article>
+					<h3>Slide to adjust the <b>letter spacing</b></h3>
+					<p>This adjusts the space between characters</p>
+					<div class="style-4">
+						<input id="letterSpaceRange" type="range" min="-1" max="5" step="0.01">
+					</div>
+				</article>
+				<article>
+					<h3>Slide to adjust the <b>word spacing</b></h3>
+					<p>This adjusts the space between words</p>
+					<div class="style-5">
+						<input type="range" min="-1" max="10" step="0.01" id="wordSpaceRange">
+					</div>
+				</article>
+				<article>
+					<div style="padding-left: 0" class="large-6 columns"><input type="submit" value="Reset" id="reset"></div>
+					<div style="padding: 0" class="large-6 columns"><input id="submitForm" type="submit" value="Save"></div>
+				</article>
+			</div>
+			<div class="large-6 columns">
+				<div class="preview" id="thisRow">
+					<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="customize.js"></script>
+	</body>
 </html>
