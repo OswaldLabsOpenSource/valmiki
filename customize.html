@@ -25,7 +25,7 @@
 			input[type="radio"] { -webkit-appearance: none; margin: 0; }
 			label { padding: 0; }
 			input[type="radio"] { outline: none; font: inherit; font-size: 100% }
-			.style-1 input[type="radio"] { width: calc(100%/3) }
+			.style-1 input[type="radio"], .style-7 input[type="radio"] { width: calc(100%/3) }
 			.style-2 input[type="radio"] { width: calc(100%/4); }
 			.style-2 input[type="radio"]:before { height: 70px; padding: 5px; margin-bottom: -7px; display: flex; justify-content: center; align-items: center; }
 			.style-2 input[type="radio"]:nth-of-type(1):before, .style-2 input[type="radio"]:nth-of-type(2):before, .style-2 input[type="radio"]:nth-of-type(3):before, .style-2 input[type="radio"]:nth-of-type(4):before { border-bottom: 0 }
@@ -44,14 +44,17 @@
 			#BlueonYellow:before { background: yellow; color: blue }
 			.style-2 input[type="radio"]:checked:before { box-shadow: 0px 0px 0px 5px #2997f2; position: relative; z-index: 1 }
 			input[type="radio"]:before { cursor: pointer; content: attr(data-name); width: 100%; float: left; text-align: center; border: 2px solid #ddd; padding: 7.5px 0 }
-			.style-1 input[type="radio"]:first-of-type:before { border-radius: 7.5px 0 0 7.5px; border-right: 0 }
-			.style-1 input[type="radio"]:last-of-type:before { border-radius: 0 7.5px 7.5px 0; border-left: 0 }
+			.style-1 input[type="radio"]:first-of-type:before, .style-7 input[type="radio"]:first-of-type:before { border-radius: 7.5px 0 0 7.5px; border-right: 0 }
+			.style-1 input[type="radio"]:last-of-type:before, .style-7 input[type="radio"]:last-of-type:before { border-radius: 0 7.5px 7.5px 0; border-left: 0 }
 			input[type="radio"]:checked:before { background: #2997f2; color: white }
 			article:not(:last-child) { margin-bottom: 30px }
 			input[type="range"] { width: 300px; }
 			input[type="submit"] { background: #2997f2; border: 1px solid #2997f2; color: #fff; cursor: pointer; padding: 15px 45px; font-size: 120%; border-radius: 7.5px; width: 100%; outline: none; }
 			input[type="submit"]#reset { background: transparent; border: 2px solid #aaa; color: #aaa; }
 			.preview { border: 2px solid #ddd; padding: 5%; border-radius: 7.5px; transition: 0.3s ease; background: yellow; color: black; font-size: 18px; letter-spacing: 2px; word-spacing: 4px; }
+			.style-7 #arialFont { font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+			.style-7 #timesFont { font-family: "Georgia", "Times New Roman", Times, serif; }
+			.style-7 #comicFont { font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif; }
 		</style>
 	</head>
 	<body>
@@ -72,6 +75,13 @@
 					<p>This adjusts the overall color-contrast ratio.</p>
 					<div class="style-2">
 						<input id="BlackonWhite" data-name="Black on White" type="radio" name="colorset"><input id="BlackonYellow" data-name="Black on Yellow" type="radio" name="colorset" checked><input id="BlackonCreme" data-name="Black on Creme" type="radio" name="colorset"><input id="OffblackonOffwhite" data-name="Off-black on Off-white" type="radio" name="colorset"><input id="Blueonwhite" data-name="Blue on White" type="radio" name="colorset"><input id="DarkbrownonLightgreen" data-name="Dark brown on Light green" type="radio" name="colorset"><input id="BrownonDarkgreen" data-name="Brown on Dark green" type="radio" name="colorset"><input id="BlueonYellow" data-name="Blue on Yellow" type="radio" name="colorset"></div>
+				</article>
+				<article>
+					<h3>Pick a <b>font</b> you&rsquo;re comfortable reading</h3>
+					<p>This adjusts the font-family.</p>
+					<div class="style-7">
+						<input id="arialFont" data-name="Arial" type="radio" name="font" checked><input id="timesFont" data-name="Times" type="radio" name="font"><input id="comicFont" data-name="Comic" type="radio" name="font">
+					</div>
 				</article>
 				<article>
 					<h3>Slide to adjust the <b>font size</b></h3>

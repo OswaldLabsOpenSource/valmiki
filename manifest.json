@@ -3,7 +3,7 @@
 
 	"name": "Oswald",
 	"description": "The revolutionary tool for accessible reading.",
-	"version": "0.1.5",
+	"version": "0.2",
 	"homepage_url": "https://getoswald.xyz",
 
 	"browser_action": {
